@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jsframe.laundry.dao.UserDao">
+    <insert id="userInsert" parameterType="userDto">
+        INSERT INTO userdb
+        VALUES (#{u_no},#{u_id},#{u_pass},#{u_name},#{u_firstaddr},#{u_secaddr},#{u_phoneNum},#{u_socialkey},#{u_socialhost})
+    </insert>
+    <!--    아이디 중복 체크-->
+    <select id="idCheck" parameterType="String" resultType="int">
+        SELECT count(*) FROM userdb WHERE u_id=#{id}
+    </select>
+    <!--    비밀번호 조회 -> 로그인-->
+    <select id="pwdSelect" resultType="java.lang.String">
+        SELECT u_pass FROM userdb WHERE u_id=#{id}
+    </select>
+    <!--    user 조회-->
+    <select id="userSelect" resultType="com.jsframe.laundry.dto.UserDto">
+        SELECT * FROM userdb WHERE u_id=#{id}
+    </select>
+
+</mapper>
