@@ -1,6 +1,9 @@
 package com.jsframe.laundry.dao;
 
-import com.jsframe.laundry.dto.*;
+import com.jsframe.laundry.dto.BoardDto;
+import com.jsframe.laundry.dto.BoardfileDto;
+import com.jsframe.laundry.dto.ListDto;
+import com.jsframe.laundry.dto.ReplyDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -38,5 +41,3 @@ public interface BoardDao {
     //댓글 수 수정
     public void boardRpUpdate(int bnum);
 }
-
-

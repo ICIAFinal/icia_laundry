@@ -1,38 +1,35 @@
 package com.jsframe.laundry.controller;
 
-import lombok.extern.java.Log;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-@Log
-public class controller {
+public class HomeController {
+    //메인페이지
     @GetMapping("/")
-    public String home() {
+    public String index() {
         return "index";
     }
 
-    //    로그인 페이지 이동
+    //로그인 페이지
     @GetMapping("login")
-    public String login(){
+    public String login() {
         return "user/login";
     }
 
-    //    회원가입 페이지 이동
+    //회원가입 페이지
     @GetMapping("uMvJoin")
-    public String uMvJoin(){
+    public String uMvJoin() {
         return "user/uMvJoin";
     }
 
-    @GetMapping("/order")
+    @GetMapping("order")
     public String order(){
-        log.info("order()");
         return "order/order";
     }
+
     @GetMapping("boardList")
     public String boardList(){
         return "board/boardList";
     }
-
 }
-

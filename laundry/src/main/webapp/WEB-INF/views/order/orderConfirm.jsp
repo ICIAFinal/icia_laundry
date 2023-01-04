@@ -1,15 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="t" tagdir="/WEB-INF/tags/layouts/user" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
  
 <t:wrapper>
 
-<script src="<c:url value="/js/bootstrap.min.js"/>" type="text/javascript" text="javascript"></script>
-
 <!-- import 라이브러리 -->
-<script src="<c:url value="/js/laundryService/order/orderConfirm.js"/>" type="text/javascript" text="javascript"></script>
+<script src="<c:url value="js/order/orderConfirm.js"/>" type="text/javascript" text="javascript"></script>
 <script type="text/javascript">
 
 

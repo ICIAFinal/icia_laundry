@@ -8,6 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>게시글 상세보기</title>
+    <link rel="stylesheet" href="css/board/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -20,7 +21,7 @@
             }
 
             //로그인한 회원 정보 및 로그아웃 출력
-            var lname = "${mb.m_name}";
+            var lname = "${user.u_name}";
             $("#mname").html(lname + "님");
             $(".suc").css("display", "block");
             $(".bef").css("display", "none");
@@ -29,7 +30,7 @@
             $("#upbtn").hide();
             $("#delbtn").hide();
 
-            var mid = "${mb.m_id}";
+            var mid = "${user.u_id}";
             var bid = "${board.b_id}";
 
             if (mid == bid) {
@@ -47,12 +48,6 @@
     <section>
         <div class="content">
             <div class="write-form">
-                <div class="user-info">
-                    <div class="user-info-sub">
-                        <p class="grade">등급 [${mb.g_name}]</p>
-                        <p class="point">POINT [${mb.m_point}]</p>
-                    </div>
-                </div>
                 <h2 class="login-header">상세 보기</h2>
                 <!-- 게시글 상세 내용 출력(div) -->
                 <div>
@@ -151,7 +146,7 @@
                     <textarea rows="3" class="write-input ta"
                               name="r_contents" id="comment"
                               placeholder="댓글을 적어주세요~"></textarea>
-                    <input type="hidden" name="r_id" value="${mb.m_id}">
+                    <input type="hidden" name="r_id" value="${user.u_id}">
                     <input type="button" value="댓글 전송"
                            class="btn-write" onclick="replyInsert()"
                            style="width: 100%; margin-bottom: 30px;">

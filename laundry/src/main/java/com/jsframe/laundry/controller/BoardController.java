@@ -103,7 +103,7 @@ public class BoardController {
             produces = "application/json; charset=UTF-8")
     @ResponseBody
     public Map<String, List<BoardfileDto>> delFile(String sysname, int bnum,
-                                               HttpSession session){
+                                                   HttpSession session){
         logger.info("delFile() - sysname : " + sysname);
 
         Map<String, List<BoardfileDto>> fMap =

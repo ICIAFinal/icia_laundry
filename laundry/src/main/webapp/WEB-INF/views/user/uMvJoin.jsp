@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
     <title>Logo</title>
@@ -11,53 +12,53 @@
 <body>
 <div class="member">
     <!-- 1. 로고 -->
-    <%--    <img class="logo" src="./images/images2/logo-naver.png">--%>
+<%--    <img class="logo" src="./images/images2/logo-naver.png">--%>
 
     <!-- 2. 필드 -->
     <form action="userInsert" method="post" name="uMvJoin"
           onsubmit="return check()">
 
-        <div class="field">
-            <b>아이디</b>
-            <span class="placehold-text"><input type="text" id="idin" name="u_id" required></span>
-            <span id="idCheck"></span>
-        </div>
+    <div class="field">
+        <b>아이디</b>
+        <span class="placehold-text"><input type="text" id="idin" name="u_id" required></span>
+        <span id="idCheck"></span>
+    </div>
 
-        <div class="field">
-            <b>비밀번호</b>
-            <input class="userpw" type="password" name="u_pass" id="pwck1" required>
-        </div>
+    <div class="field">
+        <b>비밀번호</b>
+        <input class="userpw" type="password" name="u_pass" id="pwck1" required>
+    </div>
 
-        <div class="field">
-            <b>비밀번호 재확인</b>
-            <input class="userpw-confirm pw2" type="password" name="u_pass2" id="pwck2" required>
-            <span id="pwdCheck"></span>
-        </div>
+    <div class="field">
+        <b>비밀번호 재확인</b>
+        <input class="userpw-confirm pw2" type="password" name="u_pass2" id="pwck2" required>
+        <span id="pwdCheck"></span>
+    </div>
 
-        <div class="field">
-            <b>이름</b>
-            <input type="text" name="u_name" required>
-        </div>
+    <div class="field">
+        <b>이름</b>
+        <input type="text" name="u_name" required>
+    </div>
 
-        <div class="field tel-number">
-            <b>주소</b>
-            <div>
-                <input type="text" id="sample6_postcode" placeholder="우편번호" required>
-                <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
-            </div>
-            <input type="text" id="sample6_address" placeholder="주소" name="u_firstaddr" required><br>
-            <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="u_secaddr" required>
-            <input type="text" id="sample6_extraAddress" placeholder="참고항목">
+    <div class="field tel-number">
+        <b>주소</b>
+        <div>
+            <input type="text" id="sample6_postcode" placeholder="우편번호" required>
+            <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
         </div>
+        <input type="text" id="sample6_address" placeholder="주소" name="u_firstaddr" required><br>
+        <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="u_secaddr" required>
+        <input type="text" id="sample6_extraAddress" placeholder="참고항목">
+    </div>
 
-        <div class="field tel-number">
-            <b>연락처</b>
-            <div>
-                <input type="tel" placeholder="전화번호 입력" name="u_phoneNum" required>
-            </div>
+    <div class="field tel-number">
+        <b>연락처</b>
+        <div>
+            <input type="tel" placeholder="전화번호 입력" name="u_phoneNum" required>
         </div>
-        <!-- 6. 가입하기 버튼 -->
-        <input type="submit" value="가입하기">
+    </div>
+    <!-- 6. 가입하기 버튼 -->
+    <input type="submit" value="가입하기">
     </form>
 
     <!-- 7. 푸터 -->

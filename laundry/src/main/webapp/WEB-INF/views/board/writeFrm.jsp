@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>글쓰기</title>
+    <link rel="stylesheet" href="css/board/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -41,7 +42,7 @@
                 </div>
                 <h2 class="login-header">글쓰기</h2>
                 <!-- 로그인한 id(숨김), 제목, 내용, 파일-->
-                <input type="hidden" name="b_id" value="test(수정)">
+                <input type="hidden" name="b_id" value="${user.u_id}">
                 <input type="text" class="write-input"
                        name="b_title" autofocus placeholder="제목"
                        required>

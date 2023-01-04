@@ -15,6 +15,4 @@ public class UserDto {
     //  sns social(카카오,네이버)키
     private String u_socialkey;
     private String u_socialhost;
-
-
 }

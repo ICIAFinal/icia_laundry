@@ -209,7 +209,7 @@ public class BoardService {
         return reply;
     }
 
-    public ResponseEntity<Resource> fileDownload(BoardfileDto bfile, HttpSession session) throws IOException{
+    public ResponseEntity<Resource> fileDownload(BoardfileDto bfile, HttpSession session) throws IOException {
         log.info("fileDownload()");
         //파일 저장 경로 구하기
         String realpath = session.getServletContext().getRealPath("/");

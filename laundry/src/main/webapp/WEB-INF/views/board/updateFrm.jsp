@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>글수정</title>
+    <link rel="stylesheet" href="css/board/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -18,7 +19,7 @@
             }
 
             //로그인한 회원 정보 및 로그아웃 출력
-            var lname = "${mb.m_name}";
+            var lname = "${user.u_name}";
             $("#mname").html(lname + "님");
             $(".suc").css("display", "block");
             $(".bef").css("display", "none");
@@ -34,15 +35,9 @@
         <div class="content">
             <form action="boardUpdate" class="write-form"
                   method="post" enctype="multipart/form-data">
-                <div class="user-info">
-                    <div class="user-info-sub">
-                        <p class="grade">등급 [${mb.g_name}]</p>
-                        <p class="point">POINT [${mb.m_point}]</p>
-                    </div>
-                </div>
                 <h2 class="login-header">글수정</h2>
                 <!-- 로그인한 id(숨김), 글번호(숨김), 제목, 내용, 파일-->
-                <input type="hidden" name="b_id" value="${mb.m_id}">
+                <input type="hidden" name="b_id" value="${user.u_id}">
                 <input type="hidden" name="b_num" value="${board.b_num}">
                 <input type="text" class="write-input"
                        name="b_title" autofocus placeholder="제목"

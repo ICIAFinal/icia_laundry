@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>게시글 목록</title>
+    <link rel="stylesheet" href="css/board/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 </head>
@@ -16,10 +17,10 @@
         }
 
         //로그인한 회원 정보 및 로그아웃 출력
-        <%--var lname = "${mb.m_name}";--%>
-        <%--$("#mname").html(lname + "님");--%>
-        <%--$(".suc").css("display", "block");--%>
-        <%--$(".bef").css("display", "none");--%>
+        var lname = "${user.u_name}";
+        $("#mname").html(lname + "님");
+        $(".suc").css("display", "block");
+        $(".bef").css("display", "none");
 
         //검색 기능 수행 코드
         $("#search").click(function(){

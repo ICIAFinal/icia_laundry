@@ -1,9 +1,7 @@
 package com.jsframe.laundry.controller;
 
-import com.jsframe.laundry.dao.UserDao;
 import com.jsframe.laundry.dto.UserDto;
-import com.jsframe.laundry.service.UserJoinService;
-import lombok.extern.java.Log;
+import com.jsframe.laundry.service.join.JoinService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +13,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@Log
-public class UserJoinController {
-    private static final Logger logger = LoggerFactory.getLogger(UserJoinController.class);
+public class JoinController {
+    private static final Logger logger = LoggerFactory.getLogger(JoinController.class);
 
     @Autowired
-    private UserJoinService uJServ;
-    private UserDao uDao;
+    private JoinService jServ;
 
     //user 회원가입
     @PostMapping("/userInsert")
@@ -29,7 +25,7 @@ public class UserJoinController {
                              RedirectAttributes rttr){
         logger.info("userInsert()");
 
-        String view = uJServ.userInsert(user, rttr);
+        String view = jServ.userInsert(user, rttr);
         return view;
     }
 
@@ -39,7 +35,7 @@ public class UserJoinController {
     @ResponseBody
     public String idCheck(String data){
         logger.info("idCheck() - u_id : " + data);
-        String res = uJServ.idCheck(data);
+        String res = jServ.idCheck(data);
         return res;
     }
 
@@ -49,7 +45,7 @@ public class UserJoinController {
                                 RedirectAttributes rttr){
         logger.info("userLoginProc()");
 
-        String view = uJServ.loginProc(user, session, rttr);
+        String view = jServ.loginProc(user, session, rttr);
 
         return view;
     }

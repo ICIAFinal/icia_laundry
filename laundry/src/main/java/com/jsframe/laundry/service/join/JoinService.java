@@ -1,4 +1,4 @@
-package com.jsframe.laundry.service;
+package com.jsframe.laundry.service.join;
 
 import com.jsframe.laundry.dao.UserDao;
 import com.jsframe.laundry.dto.UserDto;
@@ -13,14 +13,16 @@ import javax.servlet.http.HttpSession;
 
 @Service
 @Log
-public class UserJoinService {
+public class JoinService {
     @Autowired
     private UserDao uDao;
 
     private BCryptPasswordEncoder pwdEncoder = new BCryptPasswordEncoder();
     private ModelAndView mv;
-    public String userInsert(UserDto user, RedirectAttributes rttr) {
 
+    //회원가입 메소드
+    public String userInsert(UserDto user,
+                             RedirectAttributes rttr) {
         String view = null;
         String msg = null;
 
@@ -44,7 +46,7 @@ public class UserJoinService {
 
         return view;
     }
-
+    //아이디 중복체크
     public String idCheck(String id) {
         String res = null;
 
@@ -58,8 +60,9 @@ public class UserJoinService {
         }
         return res;
     }
-
-    public String loginProc(UserDto user, HttpSession session, RedirectAttributes rttr) {
+    //  로그인 서비스
+    public String loginProc(UserDto user, HttpSession session,
+                            RedirectAttributes rttr) {
         String view = null;
         String msg = null;
 
@@ -90,5 +93,5 @@ public class UserJoinService {
         rttr.addFlashAttribute("msg", msg);
 
         return view;
-    }
+    }//로그인 서비스 end
 }

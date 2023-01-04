@@ -55,7 +55,7 @@
 
             $('#param').val(param_string);
 
-            $('form[name=frm]').attr('action', "<c:url value='/laundryService/order/orderConfirm'/>");
+            $('form[name=frm]').attr('action', "<c:url value='./orderConfirm.jsp'/>");
             $('form[name=frm]').attr('method', 'post');
         });
 
@@ -121,7 +121,7 @@
             var itemInfo = {"no": itemNo};
 
             $.ajax({
-                url: './optionInfo',
+                url: '/optionInfo',
                 type: 'GET',
                 data: itemInfo,
 

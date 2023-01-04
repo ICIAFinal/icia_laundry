@@ -11,7 +11,7 @@
 <body>
 <div class="wrap">
 	<header>
-	<jsp:include page="../../header.jsp"/>
+	<jsp:include page="../header.jsp"/>
 	</header>
 	<section>
 	<div class="content-home">

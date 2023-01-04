@@ -1,11 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <link rel="stylesheet" href="css/header/header.css">
 
-<link rel="stylesheet" href="css/footer/footer.css">
 
 
 <!-- Google fonts -->
@@ -28,7 +26,7 @@
 <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center">
 
-        <h1 class="logo me-auto"><a href="#">Logo</a></h1>
+        <h1 class="logo me-auto"><a href="/">Logo</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -47,7 +45,7 @@
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto" href="order">픽업신청</a></li>
-                <li><a class="nav-link   scrollto" href="#p">고객센터</a></li>
+                <li><a class="nav-link   scrollto" href="#">고객센터</a></li>
                 <li><a class="nav-link scrollto" href="boardList">커뮤니티</a></li>
                 <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
@@ -66,7 +64,13 @@
                         <li><a href="#">Drop Down 4</a></li>
                     </ul>
                 </li>
-                <li><a class="getstarted scrollto" href="login">로그인</a></li>
+
+                    <c:if test="${u_id == null}">
+                        <li><a class="getstarted scrollto" href="login" id="log">로그인</a></li>
+                    </c:if>
+                    <c:if test="${u_id != null}">
+                        <li><a class="getstarted scrollto" href="myInfo" id="myInfo">내정보</a></li>
+                    </c:if>
             </ul>
 
         </nav><!-- .navbar -->

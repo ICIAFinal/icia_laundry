@@ -1,12 +1,8 @@
-package com.jsframe.laundry.service.product;
+package com.jsframe.laundry.service.Product;
 
-import com.jsframe.laundry.dto.ProductDto;
+import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
+@Service
+public class ProductService {
 
-public interface ProductService {
-    public List<Map<String, Object>> selectAllProductGroup();
-    public List<ProductDto> selectAllProduct(int ProductGroup);
-    public ProductDto selectByNo(int no);
 }
